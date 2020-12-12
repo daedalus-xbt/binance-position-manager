@@ -1,0 +1,12 @@
+{
+  "name": "binance-position-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "node-binance-api": "^0.12.2",
+    "p-iteration": "^1.1.8"
+  }
+}
