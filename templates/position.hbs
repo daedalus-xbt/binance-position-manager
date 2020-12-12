@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <table style="max-width: 400px;">
+        {{#each data}}
+        {{#if ($inArray @key @root.data.showKeys) }}
+        <tr>
+            <td style="text-align: right;">
+                <b>{{@key}}</b>
+            </td>
+            <td style="text-align: right;">
+                {{this}}$
+            </td>
+        </tr>
+        {{/if}}
+        {{/each}}
+
+    </table>
+    <br>
+
+    <table>
+        <tr>
+            <th>symbol</th>
+            <th>initialMargin</th>
+            <th>maintMargin</th>
+            <th>unrealizedProfit</th>
+            <th>positionInitialMargin</th>
+            <th>openOrderInitialMargin</th>
+            <th>leverage</th>
+            <th>isolated</th>
+            <th>entryPrice</th>
+            <th>maxNotional</th>
+            <th>positionSide</th>
+            <th>positionAmt</th>
+        </tr>
+
+        {{#each data.positions}}
+        <tr>
+            <td>{{symbol}}</td>
+            <td>{{initialMargin}}</td>
+            <td>{{maintMargin}}</td>
+            <td>{{unrealizedProfit}}</td>
+            <td>{{positionInitialMargin}}</td>
+            <td>{{openOrderInitialMargin}}</td>
+            <td>{{leverage}}</td>
+            <td>{{isolated}}</td>
+            <td>{{entryPrice}}</td>
+            <td>{{maxNotional}}</td>
+            <td>{{positionSide}}</td>
+            <td>{{positionAmt}}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</body>
+
+</html>
