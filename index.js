@@ -56,9 +56,10 @@ async function main() {
   futuresAccount['showKeys'] = showKeys;
 
   var today = format(new Date(), 'yyyy-MM-dd');
+  var todayInUTC = new Date().getTime();
   var result = render('./templates/position.hbs', { 'data': futuresAccount });
   fs.writeFileSync(`./output/${today}.html`, result);
-  fs.writeFileSync(`./output/${today}.json`, JSON.stringify(futuresAccount));
+  fs.writeFileSync(`./output/${todayInUTC}.json`, JSON.stringify(futuresAccount));
 
 }
 
